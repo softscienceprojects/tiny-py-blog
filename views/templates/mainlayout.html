@@ -1,10 +1,11 @@
 $def with (page)
 $var css: static/css/styles.css
 <html lang="en">
+    <!-- in css variables, if using more than one link, separate with a space-->
     <head>
         <meta charset="UTF-8">
         <title>Tiny Blog</title>
-
+        <!-- any variables created above, has to be accessed in self. -->
         $if self.css:
             $for style in self.css.split():
                 <link rel="stylesheet" href="$style" />
