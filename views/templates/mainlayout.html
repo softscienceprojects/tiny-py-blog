@@ -1,9 +1,13 @@
 $def with (page)
-
+$var css: static/css/styles.css
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Tiny Blog</title>
+
+        $if self.css:
+            $for style in self.css.split():
+                <link rel="stylesheet" href="$style" />
     </head>
     <body>
         <div id="app">
