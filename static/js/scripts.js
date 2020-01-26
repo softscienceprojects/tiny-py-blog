@@ -1,7 +1,7 @@
 //do the window thing like at work
 
 $(document).ready(function() {
-    $(document).on("submit", "#register-form", function(e){
+    $("#register-form").submit(function(e) {
         e.preventDefault();
         let form = $("#register-form").serialize();
         $.ajax({
