@@ -1,18 +1,25 @@
 $def with (page)
 $var css: static/css/styles.css
+$var js: static/js/jquery-3.4.1.min.js static/js/scripts.js
 <html lang="en">
-    <!-- in css variables, if using more than one link, separate with a space-->
+    
     <head>
         <meta charset="UTF-8">
         <title>Tiny Blog</title>
+        <!-- in css variables, if using more than one link, separate with a space (this is wny we've prefaced with the split below)-->
         <!-- any variables created above, has to be accessed in self. -->
         $if self.css:
             $for style in self.css.split():
                 <link rel="stylesheet" href="$style" />
+        
     </head>
     <body>
         <div id="app">
             $:page
         </div>
+
+    $if self.js:
+        $for script in self.js.split():
+            <script src="$script"></script>
     </body>
 </html>
